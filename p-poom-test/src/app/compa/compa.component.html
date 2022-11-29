@@ -1,0 +1,14 @@
+<div class="form">
+
+    <!-- <input #newHero (keyup.enter)="addHero(newHero.value)" (blur)="addHero(newHero.value); newHero.value='' "> -->
+
+    <!-- <button class="btn-submit" (click)="addHero(newHero.value)">ADD</button> -->
+
+    <div class="msgToSibling">
+        <input type="text" id="msgToSibling" name="msgToSibling" [(ngModel)]="currentMsgToSibling" />
+        <button style="margin-top: 2rem;" (click)="msgToSib()">send</button>
+    </div>
+
+
+
+</div>
