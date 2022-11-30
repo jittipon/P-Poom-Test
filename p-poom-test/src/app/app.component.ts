@@ -1,6 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { CompaComponent } from './compa/compa.component';
-import { CompbComponent } from './compb/compb.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +8,10 @@ import { CompbComponent } from './compb/compb.component';
 export class AppComponent {
 
   title = 'p-poom-test';
-  msgFromChild1: any;
 
-  currentMsgFromChild1ToChild2: any;
+  currentMsgFromChild1ToChild2!: string;
 
-  fwdMsgToSib2($event: any) {
+  fwdMsgToSib2($event: string): void {
     this.currentMsgFromChild1ToChild2 = $event;
   }
 }

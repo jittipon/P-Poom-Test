@@ -7,22 +7,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class CompaComponent {
 
-  @Output() msgToSibling = new EventEmitter<any>();
+  @Output() msgToSibling = new EventEmitter<string>();
 
   currentMsgToSibling = '';
 
-  msgFromChild1 = []
-
-  msgToSib() {
+  msgToSib(): void {
     this.msgToSibling.emit(this.currentMsgToSibling);
   }
-
-  // heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
-
-  // addHero(newHero: string) {
-  //   if (newHero) {
-  //     this.heroes.push(newHero);
-  //   }
-  // }
 
 }

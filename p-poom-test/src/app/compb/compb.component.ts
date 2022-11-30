@@ -1,27 +1,26 @@
-import { Component, Input, EventEmitter, } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-compb',
   templateUrl: './compb.component.html',
   styleUrls: ['./compb.component.scss']
 })
-export class CompbComponent {
+export class CompbComponent implements OnChanges {
 
   @Input()
-  currentMsgFromChild1ToChild2: any[] = [];
+  currentMsgFromChild1ToChild2!: string;
 
   ngOnChanges() {
-    console.log('currentMsgFromChild1ToChild2', this.currentMsgFromChild1ToChild2);
     this.addTodo(this.currentMsgFromChild1ToChild2);
-
   }
 
   todolist = ['sleep', 'eat', 'code', 'repeat'];
 
-  addTodo(newTodo: any) {
+  addTodo(newTodo: string): void {
     if (newTodo) {
       this.todolist.push(newTodo);
     }
   }
+
 
 }
